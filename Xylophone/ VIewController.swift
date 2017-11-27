@@ -15,8 +15,8 @@ class ViewController: UIViewController{
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
-
+    //    From: https://stackoverflow.com/questions/24043904/creating-and-playing-a-sound-in-swift
+    // Search for Swift 4 answer
     for index in 0...sounds.count - 1 {
       let fileName : String = "note\(sounds[index])"
 
@@ -26,25 +26,8 @@ class ViewController: UIViewController{
     }
   }
 
-
-
   @IBAction func notePressed(_ sender: UIButton) {
-
     AudioServicesPlaySystemSound(sounds[sender.tag-1])
-    print(sender.tag-1)
-//    switch sender.tag {
-//    case 1:
-//      print("Play note 1")
-//      AudioServicesPlaySystemSound(sounds[0])
-//    case 2:
-//      print("Play note 2")
-//      AudioServicesPlaySystemSound(sounds[1])
-//    default:
-//      print("Invalid tag")
-//    }
   }
-
-  
-
 }
 
